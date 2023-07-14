@@ -13,8 +13,14 @@ class Menu extends React.Component {
   constructor() {
     super();
     this.state = {
+      hasSearched: false,
       showingSearch: false,
+      searchResults: [],
     };
+  }
+
+  componentDidMount() {
+    this.setState({ searchResults: [] });
   }
 
   /**
@@ -38,15 +44,21 @@ class Menu extends React.Component {
     // Start Here
     const searchText = e.target.value;
     if (searchText.length > 0) {
+      this.setState({ hasSearched: true });
       axios
         .get(`http://localhost:3035/search?q=${searchText}`)
         .then((response) => {
           // Handle search results here
           console.log(response.data);
+          // update the state with the search results
+          this.setState({ searchResults: response.data });
         })
         .catch((error) => {
           console.error(error);
         });
+    } else {
+      // if search text is empty, clear the search results
+      this.setState({ searchResults: [], hasSearched: false });
     }
   }
 
@@ -61,7 +73,7 @@ class Menu extends React.Component {
       <header className="menu">
         <div className="menu-container">
           <div className="menu-holder">
-            <h1>ELC</h1>
+            <h1 className="pt-4">ELC</h1>
             <nav>
               <a href="#" className="nav-item">
                 HOLIDAY
@@ -100,6 +112,43 @@ class Menu extends React.Component {
           <a href="#" onClick={(e) => this.showSearchContainer(e)}>
             <i className="material-icons close">close</i>
           </a>
+
+          {/* render search results */}
+          {this.state.searchResults.length > 0 ? (
+            <div className="content-search">
+              {this.state.searchResults.map((result) => (
+                <div className="card" key={result["_id"]}>
+                  <img
+                    className="card_img"
+                    alt={result.name}
+                    src={result.picture}
+                  />
+                  <div className="card_content">
+                    <div className="card_title">{result.name}</div>
+                    <div className="card_description">{result.about}</div>
+                    <div className="card_footer">
+                      <p className="price">${result.price}</p>
+                      <div>
+                        {result.tags.map((tag, tagIndex) => (
+                          <span key={tagIndex} className="tag">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : this.state.hasSearched ? (
+            <div className="zero-results">
+              <h2 className="search-results__title">Search Results</h2>
+              <div className="font-tstar-bold">
+                No Results Found. We suggest double-checking the spelling,
+                searching for a similar term.
+              </div>
+            </div>
+          ) : null}
         </div>
       </header>
     );

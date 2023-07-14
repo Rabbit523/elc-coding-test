@@ -6,49 +6,119 @@
 $siteWidth: 1280px;
 
 // Imports
-@import '_menu.scss';
-@import '_home.scss';
 
+@import "_menu.scss";
+@import "_home.scss";
 
-html, html * {
-    box-sizing: border-box; padding: 0; margin: 0;
+html,
+html * {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 // These are used to ensure the app runs full display
-html, body {
-    width: 100%; height: 100%;
+html,
+body {
+  width: 100%;
+  height: 100%;
 }
 
 // Main body content
 main {
+  // The main body of the page
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
 
-    // The main body of the page
+  * {
+    -webkit-font-smoothing: antialiased;
+  }
+
+  // The links for the app all have these main attributes
+  a {
+    transition: opacity 0.5s;
+
+    &:hover {
+      opacity: 0.7;
+    }
+    &:visited {
+      color: inherit;
+    }
+  }
+
+  // Inner Divs are used for general full width containers
+  div.inner {
     width: 100%;
-    height: 100%;
-    display: block;
-    position: relative;
+    height: auto;
+    background-color: rgb(150, 0, 0);
+  }
 
-    * {
-        -webkit-font-smoothing: antialiased;
-    }
-    
-    // The links for the app all have these main attributes
-    a {
-        transition: opacity .5s;
-
-        &:hover {
-            opacity: 0.7;
-        }
-        &:visited {
-            color: inherit;
-        }
-    }
-
-    // Inner Divs are used for general full width containers
-    div.inner { 
+  .content-search {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 16px;
+    padding-top: 20px;
+    .card {
+      display: flex;
+      align-items: center;
+      border: 1px solid #ccc;
+      padding: 10px;
+      box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+      .card_img {
         width: 100%;
-        height: auto;
-        background-color: rgb(150, 0, 0);
+        height: 6.875rem;
+        object-fit: contain;
+      }
+      .card_content {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        .card_title {
+          font-size: 20px;
+          font-weight: bold;
+        }
+      }
+      .card_footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 25px 0 5px;
+        border-top: 1px solid #ddd;
+        .price {
+          font-size: 18px;
+          font-weight: bold;
+        }
+        .tag {
+          background-color: #eee;
+          padding: 5px;
+          margin-right: 5px;
+          font-size: 0.8em;
+        }
+      }
     }
+  }
 
+  .zero-results {
+    padding-top: 20px;
+    .font-tstar-bold {
+      padding: 2em;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 15px;
+      line-height: 1.25;
+    }
+  }
+
+  .search-results__title {
+    margin: 15px 0;
+    padding: 0;
+    text-align: center;
+    line-height: 1;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 18px;
+    letter-spacing: -1px;
+  }
 }
