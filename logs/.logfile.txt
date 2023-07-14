@@ -66,3 +66,26 @@
 [11/1/2023 -- 15:30]  Mustache Templates ran on the HTML files
 [11/1/2023 -- 15:30]  Scripts ran on main.js
 [11/1/2023 -- 15:30]  Sass ran on files
+[14/7/2023 -- 13:55]  Info task started
+[14/7/2023 -- 13:55]  Mustache Templates ran on the HTML files
+[14/7/2023 -- 13:55]  Scripts ran on main.js
+[14/7/2023 -- 13:56]  Sass ran on files
+[14/7/2023 -- 14:14]  Scripts ran on main.js
+[14/7/2023 -- 14:15]  restarted!
+[14/7/2023 -- 14:21]  restarted!
+[14/7/2023 -- 14:21]  Scripts ran on main.js
+[14/7/2023 -- 14:23]  restarted!
+[14/7/2023 -- 14:24]  restarted!
+[14/7/2023 -- 14:24]  restarted!
+[14/7/2023 -- 14:24]  restarted!
+[14/7/2023 -- 14:26]  Info task started
+[14/7/2023 -- 14:26]  Mustache Templates ran on the HTML files
+[14/7/2023 -- 14:26]  Scripts ran on main.js
+[14/7/2023 -- 14:26]  Sass ran on files
+[14/7/2023 -- 14:28]  Scripts ran on main.js
+[14/7/2023 -- 14:29]  Scripts ran on main.js
+[14/7/2023 -- 14:30]  Scripts ran on main.js
+[14/7/2023 -- 14:41]  Info task started
+[14/7/2023 -- 14:41]  Mustache Templates ran on the HTML files
+[14/7/2023 -- 14:41]  Scripts ran on main.js
+[14/7/2023 -- 14:41]  Sass ran on files

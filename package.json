@@ -8,17 +8,18 @@
     "url": ""
   },
   "dependencies": {
+    "axios": "^1.4.0",
     "babel-preset-es2015": "^6.24.1"
   },
   "scripts": {
     "globals": "npm i -g cross-env",
-    "servers": "set NODE_ENV=development&&gulp watch",
-    "dev-server": "cross-env set NODE_ENV=development&&gulp dev_server",
-    "node-server": "cross-env set NODE_ENV=development&&nodemon server/app.js",
-    "prod": "cross-env set NODE_ENV=production&&gulp prod",
-    "image-min": "cross-env set NODE_ENV=development&&gulp images",
-    "sass": "cross-env set NODE_ENV=development&&gulp sass",
-    "third-party": "cross-env set NODE_ENV=development&&gulp vendor"
+    "servers": "set SET NODE_ENV=development&&gulp watch",
+    "dev-server": "cross-env set SET NODE_ENV=development&&gulp dev_server",
+    "node-server": "cross-env set SET NODE_ENV=development&&nodemon server/app.js",
+    "prod": "cross-env set SET NODE_ENV=production&&gulp prod",
+    "image-min": "cross-env set SET NODE_ENV=development&&gulp images",
+    "sass": "cross-env set SET NODE_ENV=development&&gulp sass",
+    "third-party": "cross-env set SET NODE_ENV=development&&gulp vendor"
   },
   "keywords": [
     "Template"
@@ -32,6 +33,7 @@
     "@babel/preset-react": "^7.0.0-beta.36",
     "babel-loader": "^9.1.2",
     "browser-sync": "^2.26.3",
+    "cors": "^2.8.5",
     "cross-env": "^7.0.3",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "4.0.0",
@@ -50,6 +52,7 @@
     "react-native-dotenv": "^2.5.5",
     "sass": "^1.57.1",
     "uglify-js": "3.2.2",
+    "url": "^0.11.1",
     "webpack": "^5.75.0",
     "webpack-stream": "^7"
   }
